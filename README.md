@@ -15,7 +15,13 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./Pipeline/1_import.png
+[image1]: ./Pipeline/1_import.png "Initial Import"
+[image2]: ./Pipeline/2_grayscale.png "Image is grayscaled"
+[image3]: ./Pipeline/3_blur_gray.png "Gaussian blur to reduce noise"
+[image4]: ./Pipeline/4_canny.png "Canny Filter"
+[image5]: ./Pipeline/5_canny_roi.png "ROI applied to Canny Filter"
+[image6]: ./Pipeline/6_lines_from_hough.png "Hough lines"
+[image7]: ./Pipeline/7_overlaid.png "Hough Lines applied on input image"
 
 ---
 
