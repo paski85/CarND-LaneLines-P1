@@ -28,7 +28,7 @@ ROI from (bottom_left) (max_x/2-x_res/50, .6*max_y) (max_x/2+x_res/50, .6*max_y)
 
 ![Alt text](./Pipeline/5_canny_roi.png?raw=true "ROI applied to Canny Filter")
 
-* Hough results are filtered according to slope ((y2-y1)/(x2-y2)) (positive righ line/negative left line)
+* Hough results are filtered according to slope ((y2-y1)/(x2-y2)) (positive right line/negative left line)
 * Vertical and Horizontal slopes are filtered out
 * The mean slope and standard dev is calculated
 * Outliers of mean+2_standard_devs are excluded
