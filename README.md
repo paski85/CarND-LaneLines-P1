@@ -6,7 +6,7 @@ The goals / steps of this project are the following:
 
 ---
 
-### Pipeline
+###1. Pipeline
 
 Original frame is imported:
 
@@ -35,6 +35,7 @@ ROI from (bottom_left) (max_x/2-x_res/50, .6*max_y) (max_x/2+x_res/50, .6*max_y)
 * Mean slope is recalculated for left and right lines
 * Mean y-intercept is calculated
 * Lines starting from the bottom edge, going to .6*max_y are calculated using the mean left and right slope and y_intercept y=mx+b
+* A circular buffer of the mean left and right slopes of the last ten frames is kept to filter out outliers
 
 ![Alt text](./Pipeline/6_lines_from_hough.png?raw=true "Hough Lines")
 
@@ -47,27 +48,17 @@ The resulting lines are overlaid onto the original input image
 
 ### Reflection
 
-###1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
-
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
-
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
-
 
 
 ###2. Identify potential shortcomings with your current pipeline
 
-
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
+* The current pipeline is jittery at times.
 
 
 ###3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+* To improve performance a check on the line y-intercept and a ring buffer of sensible y-intercepts could be kept from frame to frame.
+* y-intercepts can only change as fast as a lane change (e.g. 1000 pixels/s->25 pixels/frame-to-frame) 
+* Confidence in the lane could be color-coded (e.g. how many hough lines are detected)
 
-Another potential improvement could be to ...
+
