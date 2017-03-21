@@ -15,7 +15,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./pipeline/1_import.png
+[image1]: ./Pipeline/1_import.png
 
 ---
 
